@@ -36,8 +36,6 @@ module.exports = {
   output: {
     // output path is required for `clean-webpack-plugin`
     path: path.resolve(__dirname, "dist"),
-    // this places all images processed in an image folder
-    assetModuleFilename: "images/[hash][ext][query]",
   },
 
   module: {
@@ -59,25 +57,17 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        /**
-         * The `type` setting replaces the need for "url-loader"
-         * and "file-loader" in Webpack 5.
-         *
-         * setting `type` to "asset" will automatically pick between
-         * outputing images to a file, or inlining them in the bundle as base64
-         * with a default max inline size of 8kb
-         */
-        type: "asset",
-
-        /**
-         * If you want to inline larger images, you can set
-         * a custom `maxSize` for inline like so:
-         */
-        // parser: {
-        //   dataUrlCondition: {
-        //     maxSize: 30 * 1024,
-        //   },
-        // },
+        type: "asset/resource",
+        generator: {
+          filename: 'images/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf)$/,
+        type: "asset/resource",
+        generator: {
+          filename: 'fonts/[hash][ext][query]'
+        }
       },
       {
         test: /\.jsx?$/,
