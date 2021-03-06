@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find-a-Flight</title>
+  </head>
+  <body>
+    <div id="root">
+      <main class="page__main">
+        <div class="page__bg-image"></div>
+        <section class="page__login login">
+          <h1 class="login__title">Simple Flight Check</h1>
+          <form class="login__form form" method="post" action="#">
+            <div class="form__input-wrapper form__input-wrapper--error">
+              <label class="form__label" for="email">Логин:</label>
+              <input class="form__input" type="email" name="email" id="email" required>
+              <span class="form__input-error">Описание ошибки будет тут</span>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="password">Пароль:</label>
+              <input class="form__input" type="password" name="password" minlength="8" pattern="^[a-zA-Z0-9!@#$%^&*]+$" id="password" required>
+              <span class="form__input-error"></span>
+            </div>
+            <button class="form__submit" type="submit">Войти</button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

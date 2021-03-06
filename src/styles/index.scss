@@ -1,4 +1,11 @@
-#root {
-  color: red;
-  font-family: 'Roboto', Arial, sans-serif;
-}
+@use 'fonts';
+@use 'scaffolding';
+@use 'page';
+
+@use 'login';
+@use 'form';
+
+@use 'flights';
+@use 'date';
+@use 'slider';
+@use 'card';

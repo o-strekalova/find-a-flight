@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find-a-Flight</title>
+  </head>
+  <body>
+    <div id="root">
+      <main class="page__main">
+        <button class="page__log-out" type="submit">Выйти</button>
+        <section class="page__flights flights">
+          <div class="flights__wrap">
+            <h1 class="flights__title">
+              Вылеты
+              <span class="flights__airports">SVO - JFK</span>
+            </h1>
+            <form class="flights__date date" action="#" method="post">
+              <label class="date__label" for="date">07 июля 2020</label>
+              <input class="date__picker visually-hidden" type="date" name="date" id="date" value="2020-07-07" required>
+            </form>
+          </div>
+          <ul class="flights__slider slider">
+            <li class="slider__item">
+              <img class="slider__image" src="../images/img-1.png" alt="ny-1" width="164" height="149">
+            </li>
+            <li class="slider__item">
+              <img class="slider__image" src="../images/img-2.png" alt="ny-2" width="164" height="149">
+            </li>
+            <li class="slider__item">
+              <img class="slider__image" src="../images/img-3.png" alt="ny-3" width="164" height="149">
+            </li>
+            <li class="slider__item">
+              <img class="slider__image" src="../images/img-4.png" alt="ny-4" width="164" height="149">
+            </li>
+          </ul>
+          <h2 class="flights__favorited">
+            Добавлено в Избранное:
+            <span class="flights__favorited--number">10</span>
+            рейсов
+          </h2>
+          <ul class="flights__list">
+            <li class="flights__item card">
+              <div class="card__icon"></div>
+              <article class="card__info">
+                <h3 class="card__cities">
+                  <span class="card__departure-city">Moscow (SVO)</span>
+                  <span class="card__arrival-city">New York City (JFK)</span>
+                </h3>
+                <div class="card__date-time">
+                  28 June, 2020
+                  <span class="card__time">14:50</span>
+                </div>
+                <div class="card__company">Aeroflot</div>
+              </article>
+              <article class="card__info card__info--price">
+                <button class="card__favorite-button card__favorite-button--liked" type="button"></button>
+                <div class="card__price">
+                  <h4 class="card__price-title">Price:</h4>
+                  <span class="card__amount">23 924 &#8381;</span>
+                </div>
+              </article>
+            </li>
+            <li class="flights__item card">
+              <div class="card__icon"></div>
+              <article class="card__info">
+                <h3 class="card__cities">
+                  <span class="card__departure-city">Moscow (SVO)</span>
+                  <span class="card__arrival-city">New York City (JFK)</span>
+                </h3>
+                <div class="card__date-time">
+                  28 June, 2020
+                  <span class="card__time">14:50</span>
+                </div>
+                <div class="card__company">Aeroflot</div>
+              </article>
+              <article class="card__info card__info--price">
+                <button class="card__favorite-button" type="button"></button>
+                <div class="card__price">
+                  <h4 class="card__price-title">Price:</h4>
+                  <span class="card__amount">23 924 &#8381;</span>
+                </div>
+              </article>
+            </li>
+            <li class="flights__item card">
+              <div class="card__icon"></div>
+              <article class="card__info">
+                <h3 class="card__cities">
+                  <span class="card__departure-city">Moscow (SVO)</span>
+                  <span class="card__arrival-city">New York City (JFK)</span>
+                </h3>
+                <div class="card__date-time">
+                  28 June, 2020
+                  <span class="card__time">14:50</span>
+                </div>
+                <div class="card__company">Aeroflot</div>
+              </article>
+              <article class="card__info card__info--price">
+                <button class="card__favorite-button" type="button"></button>
+                <div class="card__price">
+                  <h4 class="card__price-title">Price:</h4>
+                  <span class="card__amount">23 924 &#8381;</span>
+                </div>
+              </article>
+            </li>
+            <li class="flights__item card">
+              <div class="card__icon"></div>
+              <article class="card__info">
+                <h3 class="card__cities">
+                  <span class="card__departure-city">Moscow (SVO)</span>
+                  <span class="card__arrival-city">New York City (JFK)</span>
+                </h3>
+                <div class="card__date-time">
+                  28 June, 2020
+                  <span class="card__time">14:50</span>
+                </div>
+                <div class="card__company">Aeroflot</div>
+              </article>
+              <article class="card__info card__info--price">
+                <button class="card__favorite-button" type="button"></button>
+                <div class="card__price">
+                  <h4 class="card__price-title">Price:</h4>
+                  <span class="card__amount">23 924 &#8381;</span>
+                </div>
+              </article>
+            </li>
+            <li class="flights__item card">
+              <div class="card__icon"></div>
+              <article class="card__info">
+                <h3 class="card__cities">
+                  <span class="card__departure-city">Moscow (SVO)</span>
+                  <span class="card__arrival-city">New York City (JFK)</span>
+                </h3>
+                <div class="card__date-time">
+                  28 June, 2020
+                  <span class="card__time">14:50</span>
+                </div>
+                <div class="card__company">Aeroflot</div>
+              </article>
+              <article class="card__info card__info--price">
+                <button class="card__favorite-button" type="button"></button>
+                <div class="card__price">
+                  <h4 class="card__price-title">Price:</h4>
+                  <span class="card__amount">23 924 &#8381;</span>
+                </div>
+              </article>
+            </li>
+            <li class="flights__item card">
+              <div class="card__icon"></div>
+              <article class="card__info">
+                <h3 class="card__cities">
+                  <span class="card__departure-city">Moscow (SVO)</span>
+                  <span class="card__arrival-city">New York City (JFK)</span>
+                </h3>
+                <div class="card__date-time">
+                  28 June, 2020
+                  <span class="card__time">14:50</span>
+                </div>
+                <div class="card__company">Aeroflot</div>
+              </article>
+              <article class="card__info card__info--price">
+                <button class="card__favorite-button" type="button"></button>
+                <div class="card__price">
+                  <h4 class="card__price-title">Price:</h4>
+                  <span class="card__amount">23 924 &#8381;</span>
+                </div>
+              </article>
+            </li>
+            <li class="flights__item card">
+              <div class="card__icon"></div>
+              <article class="card__info">
+                <h3 class="card__cities">
+                  <span class="card__departure-city">Moscow (SVO)</span>
+                  <span class="card__arrival-city">New York City (JFK)</span>
+                </h3>
+                <div class="card__date-time">
+                  28 June, 2020
+                  <span class="card__time">14:50</span>
+                </div>
+                <div class="card__company">Aeroflot</div>
+              </article>
+              <article class="card__info card__info--price">
+                <button class="card__favorite-button" type="button"></button>
+                <div class="card__price">
+                  <h4 class="card__price-title">Price:</h4>
+                  <span class="card__amount">23 924 &#8381;</span>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

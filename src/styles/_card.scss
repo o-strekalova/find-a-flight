@@ -1,0 +1,112 @@
+.card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 24px;
+
+  background-color: rgba(0, 119, 255, 0.05);
+  background-image: url('../images/plane.svg');
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-position: 50%;
+}
+
+.card__info {
+  color: #878787;
+
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+
+  &--price {
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.card__cities {
+  margin: 0;
+
+  color: #424242;
+
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.card__arrival-city {
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 10px;
+    margin-left: 7px;
+    margin-right: 11px;
+
+    background-image: url('../images/arrow-small.svg');
+    background-size: 16px 10px;
+    background-position: 50%;
+  }
+}
+
+.card__time {
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 9px;
+    height: 1px;
+    margin-left: 7px;
+    margin-right: 9px;
+
+    background-color: #c4c4c4;
+    border-radius: 2px;
+  }
+}
+
+.card__favorite-button {
+  margin-top: -5px;
+  width: 21px;
+  height: 18px;
+  border: none;
+
+  background: transparent;
+  background-image: url('../images/heart.svg');
+  background-size: 21px 18px;
+  background-position: 50%;
+
+  &:hover,
+  &:active,
+  &--liked {
+    background-image: url('../images/heart-pink.svg');
+    cursor: pointer;
+  }
+}
+
+.card__price {
+  display: flex;
+  align-items: baseline;
+}
+
+.card__price-title {
+  margin: 0;
+  margin-right: 8px;
+
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 22px;
+}
+
+.card__amount {
+  color: #424242;
+
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+}
