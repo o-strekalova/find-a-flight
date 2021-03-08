@@ -53,3 +53,12 @@ ul {
   align-self: center;
   height: 100vh;
 }
+
+.simplebar-scrollbar::before {
+  width: 2px;
+  height: 98px;
+
+  background-color: #1157a7;
+  opacity: 1;
+  border-radius: 2px;
+}
