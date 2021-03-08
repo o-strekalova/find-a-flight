@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import PropTypes from "prop-types";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -27,6 +28,14 @@ const SimpleSlider = (props) => {
       )})}
     </Slider>
   );
+};
+
+SimpleSlider.propTypes = {
+  arrival: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    airport: PropTypes.string.isRequired,
+  }),
+  destinationImages: PropTypes.arrayOf(PropTypes.string.isRequired),
 };
 
 export default React.memo(SimpleSlider);

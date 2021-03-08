@@ -1,9 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import SimpleBar from "simplebar-react";
 import FlightCard from "./flight-card";
 import "simplebar/dist/simplebar.min.css";
-
-const SCROLL_FLIGHTS_MIN = 6;
 
 const FlightsList = (props) => {
   const {
@@ -38,5 +37,29 @@ const FlightsList = (props) => {
     </div>
   );
 }
+
+FlightsList.propTypes = {
+  departure: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    airport: PropTypes.string.isRequired,
+  }),
+  arrival: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    airport: PropTypes.string.isRequired,
+  }),
+  flights: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      carrier: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      time: PropTypes.string.isRequired,
+      isFavorite: PropTypes.bool.isRequired,
+    })
+  ),
+  favorites: PropTypes.arrayOf(PropTypes.number),
+  onFavoriteToggleClick: PropTypes.func,
+};
+
 
 export default React.memo(FlightsList);

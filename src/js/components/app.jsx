@@ -1,6 +1,7 @@
 import React from "react";
 import {Switch, Route, Router, Redirect} from "react-router-dom";
 import {connect} from "react-redux";
+import PropTypes from "prop-types";
 import Login from "./login";
 import FlightsPage from "./flights-page";
 import {ActionCreator} from "../reducer";
@@ -63,6 +64,36 @@ const App = (props) => {
       </Switch>
     </Router>
   );
+};
+
+App.propTypes = {
+  authStatus: PropTypes.string.isRequired,
+  departure: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    airport: PropTypes.string.isRequired,
+  }),
+  arrival: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    airport: PropTypes.string.isRequired,
+  }),
+  destinationImages: PropTypes.arrayOf(PropTypes.string.isRequired),
+  date: PropTypes.instanceOf(Date).isRequired,
+  flights: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      carrier: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      time: PropTypes.string.isRequired,
+      isFavorite: PropTypes.bool.isRequired,
+    })
+  ),
+  favorites: PropTypes.arrayOf(PropTypes.number),
+  errorMessage: PropTypes.string,
+  onAuthFormSubmit: PropTypes.func,
+  onLogout: PropTypes.func,
+  onDateChange: PropTypes.func,
+  onFavoriteToggleClick: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({

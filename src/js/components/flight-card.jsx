@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {formatDateToEng} from "../utils";
 
 const FlightCard = (props) => {
@@ -54,5 +55,28 @@ const FlightCard = (props) => {
     </li>
   );
 }
+
+FlightCard.propTypes = {
+  departure: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    airport: PropTypes.string.isRequired,
+  }),
+  arrival: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    airport: PropTypes.string.isRequired,
+  }),
+  flights: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      carrier: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      time: PropTypes.string.isRequired,
+      isFavorite: PropTypes.bool.isRequired,
+    })
+  ),
+  favorites: PropTypes.arrayOf(PropTypes.number),
+  onFavoriteToggleClick: PropTypes.func,
+};
 
 export default React.memo(FlightCard);

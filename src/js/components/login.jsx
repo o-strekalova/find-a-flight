@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import PropTypes from "prop-types";
 
 const AUTH_TOKEN = `wgHmgtWo4C11c3jCtxE1`;
 
@@ -59,5 +60,9 @@ const Login = (props) => {
     </main>
   );
 }
+
+Login.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default React.memo(Login);

@@ -1,11 +1,10 @@
 import React, {useEffect} from "react";
+import PropTypes from "prop-types";
 import history from "../history";
 import FlightsList from "./flights-list";
 import SimpleSlider from "./slider";
 import ErrorMessage from "./error-message";
 import {AppRoute, formatDate, formatDateToRus} from "../utils";
-
-const SCROLL_PICTURES_MIN = 4;
 
 const FlightsPage = (props) => {
   const {
@@ -75,5 +74,33 @@ const FlightsPage = (props) => {
     </main>
   );
 }
+
+FlightsPage.propTypes = {
+  departure: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    airport: PropTypes.string.isRequired,
+  }),
+  arrival: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    airport: PropTypes.string.isRequired,
+  }),
+  destinationImages: PropTypes.arrayOf(PropTypes.string.isRequired),
+  date: PropTypes.instanceOf(Date).isRequired,
+  flights: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      carrier: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      time: PropTypes.string.isRequired,
+      isFavorite: PropTypes.bool.isRequired,
+    })
+  ),
+  favorites: PropTypes.arrayOf(PropTypes.number),
+  errorMessage: PropTypes.string,
+  onLogout: PropTypes.func,
+  onDateChange: PropTypes.func,
+  onFavoriteToggleClick: PropTypes.func,
+};
 
 export default React.memo(FlightsPage);
