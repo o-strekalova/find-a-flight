@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {formatDateToEng} from "../utils";
+import {formatDateToEng} from "../../utils";
 
 const FlightCard = (props) => {
   const {

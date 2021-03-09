@@ -5,7 +5,7 @@ import {createStore, applyMiddleware} from "redux";
 import createSagaMiddleware from "redux-saga";
 import {watchLoadFlights} from "./js/sagas";
 import {ActionCreator, reducer} from "./js/reducer";
-import App from "./js/components/app";
+import App from "./js/components/app/app";
 import "./styles/index.scss";
 
 const sagaMiddleware = createSagaMiddleware()

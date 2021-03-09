@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
 import PropTypes from "prop-types";
-import history from "../history";
-import FlightsList from "./flights-list";
-import SimpleSlider from "./slider";
-import ErrorMessage from "./error-message";
-import {AppRoute, formatDate, formatDateToRus} from "../utils";
+import history from "../../history";
+import FlightsList from "../flights-list/flights-list";
+import SimpleSlider from "../slider/slider";
+import ErrorMessage from "../error-message/error-message";
+import {AppRoute, formatDate, formatDateToRus} from "../../utils";
 
 const FlightsPage = (props) => {
   const {

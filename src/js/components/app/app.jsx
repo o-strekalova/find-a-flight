@@ -2,11 +2,11 @@ import React from "react";
 import {Switch, Route, Router, Redirect} from "react-router-dom";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import Login from "./login";
-import FlightsPage from "./flights-page";
-import {ActionCreator} from "../reducer";
-import history from "../history";
-import {AppRoute, AuthStatus} from "../utils";
+import Login from "../login/login";
+import FlightsPage from "../flights-page/flights-page";
+import {ActionCreator} from "../../reducer";
+import history from "../../history";
+import {AppRoute, AuthStatus} from "../../utils";
 
 const App = (props) => {
   const {
@@ -45,7 +45,6 @@ const App = (props) => {
             return (
               authStatus === AuthStatus.AUTH ?
                 <FlightsPage
-                  authStatus={authStatus}
                   departure={departure}
                   arrival={arrival}
                   destinationImages={destinationImages}

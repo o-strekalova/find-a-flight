@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import SimpleBar from "simplebar-react";
-import FlightCard from "./flight-card";
+import FlightCard from "../flight-card/flight-card";
 import "simplebar/dist/simplebar.min.css";
 
 const FlightsList = (props) => {
