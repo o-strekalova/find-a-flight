@@ -15,9 +15,11 @@ const Login = (props) => {
   const {onSubmit} = props;
   const [emailError, setEmailError] = useState(``);
   const [passwordError, setPasswordError] = useState(``);
+  const [formDisabilityStatus, setformDisabilityStatus] = useState(true);
 
   const onChange = (evt) => {
     evt.preventDefault();
+    setformDisabilityStatus(false);
     const {name, value} = evt.target;
 
     switch (name) {
@@ -54,7 +56,7 @@ const Login = (props) => {
             <input className="form__input" type="password" name="password" id="password" required noValidate onChange={onChange}/>
             <span className="form__input-error">{passwordError}</span>
           </div>
-          <button className="form__submit" type="submit" disabled={emailError || passwordError}>Войти</button>
+          <button className="form__submit" type="submit" disabled={emailError || passwordError || formDisabilityStatus}>Войти</button>
         </form>
       </section>
     </main>
