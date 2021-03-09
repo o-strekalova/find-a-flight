@@ -16,9 +16,16 @@ const FlightsList = (props) => {
   return (
     <div className="flights__list-wrap" >
       <h2 className="flights__favorited">
-        Добавлено в Избранное:
-        <span className="flights__favorited--number"> {favorites.length} </span>
-        рейсов
+        {flights.length === 0 ?
+          <React.Fragment>
+            На эту дату нет прямых перелетов.
+          </React.Fragment> :
+          <React.Fragment>
+            Добавлено в Избранное:
+            <span className="flights__favorited--number"> {favorites.length} </span>
+            рейсов
+          </React.Fragment>
+        }
       </h2>
       <SimpleBar style={{height: '515px'}}>
         <ul className="flights__list">
@@ -60,6 +67,5 @@ FlightsList.propTypes = {
   favorites: PropTypes.arrayOf(PropTypes.number),
   onFavoriteToggleClick: PropTypes.func,
 };
-
 
 export default React.memo(FlightsList);

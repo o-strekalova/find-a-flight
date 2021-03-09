@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import PropTypes from "prop-types";
 
 const AUTH_TOKEN = `wgHmgtWo4C11c3jCtxE1`;
@@ -13,13 +13,18 @@ const validPasswordRegex = RegExp(
 
 const Login = (props) => {
   const {onSubmit} = props;
+
   const [emailError, setEmailError] = useState(``);
   const [passwordError, setPasswordError] = useState(``);
-  const [formDisabilityStatus, setformDisabilityStatus] = useState(true);
+  const [disabilityStatus, setDisabilityStatus] = useState(true);
 
-  const onChange = (evt) => {
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
+
+  const onChange  = (evt) => {
     evt.preventDefault();
-    setformDisabilityStatus(false);
+    setDisabilityStatus(!(emailInputRef.current.value && passwordInputRef.current.value));
+
     const {name, value} = evt.target;
 
     switch (name) {
@@ -48,15 +53,17 @@ const Login = (props) => {
         >
           <div className={emailError ? `form__input-wrapper form__input-wrapper--error` : `form__input-wrapper`}>
             <label className="form__label" htmlFor="email">Логин:</label>
-            <input className="form__input" type="email" name="email" id="email" required noValidate onChange={onChange}/>
+            <input className="form__input" type="email" name="email" id="email" ref={emailInputRef} required noValidate onChange={onChange}/>
             <span className="form__input-error">{emailError}</span>
           </div>
           <div className={passwordError ? `form__input-wrapper form__input-wrapper--error` : `form__input-wrapper`}>
             <label className="form__label" htmlFor="password">Пароль:</label>
-            <input className="form__input" type="password" name="password" id="password" required noValidate onChange={onChange}/>
+            <input className="form__input" type="password" name="password" id="password" ref={passwordInputRef} required noValidate onChange={onChange}/>
             <span className="form__input-error">{passwordError}</span>
           </div>
-          <button className="form__submit" type="submit" disabled={emailError || passwordError || formDisabilityStatus}>Войти</button>
+          <button className="form__submit" type="submit" disabled={emailError || passwordError || disabilityStatus}>
+            Войти
+          </button>
         </form>
       </section>
     </main>
